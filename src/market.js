@@ -1,27 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import map from './map.js'; // add this in
+import { Map } from './map.js';
 
-const Map = map.Map;
+import { dotenv } from 'dotenv';
+
+dotenv.config();
+
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+
+console.log("GOOGLE_MAPS_API_KEY" , GOOGLE_MAPS_API_KEY);
+
 
 class Market extends React.Component {
 	constructor(props) {
 	  super(props);
 
 	  this.state = {
-	    mapSource : "https://maps.googleapis.com/maps/api/staticmap?center=37.803826699999995,-122.27087429999999&zoom=13&size=300x300&sensor=false"
+	  	location : {
+	  		lat : 37.8038966,
+	  		lng : -122.27087010000001
+	  	},
+	  	url : `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}=3.exp&libraries=geometry,drawing,places`
 	  };
+
+
 
 	}
 
 	render() {
-
 		console.log("market loaded");
-
+		console.log("this.state.url = " + this.state.url );
 		return (
 			<div>
 				This is the Market
-				<Map src={this.state.mapSource}/>
+				<Map
+					lat={this.state.lat}
+					lng={this.state.lng}
+ 					googleMapURL={this.state.url}
+  				loadingElement={<div style={{ height: `100%` }} />}
+  				containerElement={<div style={{ height: `400px` }} />}
+  				mapElement={<div style={{ height: `100%` }} />}
+				/>
 		</div>
 		);
 		

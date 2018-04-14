@@ -1,8 +1,114 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <title>Green like american money - Power Brokers</title>
-    <link rel="stylesheet" type="text/html" href="../style.css">
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+
+			body {
+				font-family: 'Open Sans', sans-serif;
+				background-color: powderblue;
+				display: flex;
+				justify-content: center;
+			}
+
+			#app {
+				height: 100vh;
+				background-color: black;
+			}
+
+			.wrapper {
+				width: 40vw;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+
+			.navBar {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 5px 0 5px;
+			}
+
+			.navBar > div {
+				margin: 10px;
+				background-color: orange;
+			}
+
+			.panel {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				background-color: green;
+			}
+
+			.transaction-outer-box {
+				border-radius: 10px;
+				background-color: yellow;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin: 5px 0 5px 0;
+				align-items: center;
+			}
+
+			.transaction-outer-box > div {
+				margin: 0 10px 0 0;
+			}
+
+			.left {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				background-color: blue;
+				height: 100%;
+			}
+
+			.graph {
+				margin: 10px 30px 10px 30px;
+			}
+
+			.right {
+				padding: 10px;
+				background-color: red;
+				height: 100%;
+			}
+
+			.transaction-logo {
+				width: 10vw;
+				height: 10vw;
+				background-color: white;
+				border-radius: 100%;
+			}
+
+			.transaction-username {
+				font-size: 3vw;
+				margin-left: 20px;
+			}
+
+			.transaction-amount {
+				font-size: 4vw;
+				text-align: right;
+			}
+
+			.transaction-watts {
+				font-size: 2vw;
+				text-align: right;
+			}
+
+			.transaction-time {
+				font-size: 2vw;
+				text-align: right;
+			}
+
+</style>
   </head>
   <body>
     <div id="app"></div>

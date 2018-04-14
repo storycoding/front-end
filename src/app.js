@@ -12,23 +12,49 @@ class App extends React.Component {
   super(props);
 
   	this.state = {
-	    page : "Profile"
+	    page : "Activity"
 		};
+
+		this.selectPage = this.selectPage.bind(this);
+
+	}
+
+	 selectPage(page) {
+
+		 this.setState({
+		 	page: page
+	 	});
 
 	}
 
 	render() {
-		// conditional render for stateful page components
 
-		return (
-			<div>
-			This is the App
-			<Market/>
-			<Activity/>
+		const currentPage = this.state.page === "Activity" ? (
+      <Activity/>
+    ) : this.state.page === "Market" ? (
+    	<Market/>
+    ) : (
 			<Profile/>
+		)
+
+
+
+return (
+
+		<div>
+			<div onClick={() =>  { this.selectPage("Activity")} }>
+		  	Activity
 			</div>
-		);
-		
+			<div onClick={() =>  { this.selectPage("Market")} }>
+				Market
+			</div>
+			<div onClick={() =>  { this.selectPage("Profile")} }>
+				Profile
+			</div>
+
+			{currentPage}
+		</div>
+)
 	};
 }
 

@@ -13,12 +13,30 @@ class Transaction extends React.Component {
 
 		return (
 			<div className="transaction-outer-box">
-				<div>
-					{this.props.watts + "  "}
-					{this.props.amt + "  "}
-					{this.props.user + "  "}
-					{this.props.time + "  "}
-				</div>
+
+
+					<div className="left">
+
+						<div className="transaction-username">
+							{this.props.user}
+						</div>
+					</div>
+
+					<div className="right">
+
+						<div className="transaction-watts">
+							{this.props.watts}
+						</div>
+						<div className="transaction-amount">
+							{this.props.amt}
+						</div>
+
+						<div className="transaction-time">
+							{this.props.time}
+						</div>
+
+					</div>
+
 			</div>
 		);
 

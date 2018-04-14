@@ -12,7 +12,8 @@ class App extends React.Component {
   super(props);
 
   	this.state = {
-	    page : "Activity"
+	    page : "Activity",
+	    url : `https://maps.googleapis.com/maps/api/js?key=AIzaSyAg-V7qRX9aHxVQsyY1dRcLVAvwYuutJsw=3.exp&libraries=geometry,drawing,places`
 		};
 
 		this.selectPage = this.selectPage.bind(this);
@@ -41,7 +42,8 @@ class App extends React.Component {
 
 return (
 
-		<div>
+	<div className="wrapper">
+		<div className="navBar">
 			<div onClick={() =>  { this.selectPage("Activity")} }>
 		  	Activity
 			</div>
@@ -51,9 +53,12 @@ return (
 			<div onClick={() =>  { this.selectPage("Profile")} }>
 				Profile
 			</div>
-
-			{currentPage}
 		</div>
+
+		<div className="panel">
+				{currentPage}
+			</div>
+	</div>
 )
 	};
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import transaction from './transaction.js';
+
+const Transaction = transaction.Transaction;
 
 class Activity extends React.Component {
 	constructor(props) {
@@ -8,15 +11,12 @@ class Activity extends React.Component {
 	}
 
 	render() {
-
-		console.log("activity loaded");
-
 		return (
 			<div>
-			This is the Activity
+				<Transaction type="buy" watts="157.834 " amt="$1.74" user="John Smith" time="4/8/18 9:43am"/>
 		</div>
 		);
-		
+
 	};
 }
 

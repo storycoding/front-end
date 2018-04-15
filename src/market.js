@@ -39,7 +39,7 @@ class Market extends React.Component {
 		console.log("market loaded");
 		console.log("this.state.url = " + this.state.url );
 		return (
-			<div>
+			<div className="mapWrapper">
 				<Map
 					lat={this.state.lat}
 					lng={this.state.lng}
@@ -52,7 +52,7 @@ class Market extends React.Component {
 
 		</div>
 		);
-		
+
 	};
 }
 

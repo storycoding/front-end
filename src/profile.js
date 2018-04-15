@@ -12,9 +12,9 @@ class Profile extends React.Component {
 		console.log("profile loaded");
 
 		return (
-			<div>
-				This is the Profile
-			</div>
+			<div className="centered">
+        <input type="range" min="1" max="255" className="slider" id="slider"/>
+      </div>
 		);
 		
 	};

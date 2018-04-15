@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer'
+
 import {
   withScriptjs,
   withGoogleMap,

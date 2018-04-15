@@ -43,6 +43,10 @@ class App extends React.Component {
 return (
 
 	<div className="wrapper">
+		<div className="logo">
+			<img src="https://drive.google.com/uc?id=1MLMROo0TJloTDWdJXPtJ3gb2BU0_Jec3" height="150px" width="150px"/>
+		</div>
+		
 		<div className="navBar">
 			<div onClick={() =>  { this.selectPage("Activity")} }>
 		  	Activity

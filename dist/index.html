@@ -14,11 +14,12 @@
 				background-color: #202020;
 				display: flex;
 				justify-content: center;
+				color: white;
 			}
 
 			#app {
-				background-color: white;
 				min-height: 100vh;
+				background-color: #404040;
 			}
 
 			.wrapper {
@@ -49,8 +50,8 @@
 
 			.transaction-outer-box {
 				border-radius: 10px;
-				background-color: white;
-				box-shadow: 4px 4px 5px #D4D4D4;
+				background-color: #202020;
+				box-shadow: 4px 4px 5px black;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
@@ -106,10 +107,34 @@
 				text-align: right;
 			}
 
+			.centered {
+				margin-top: 100px;
+				display: flex;
+				justify-content: center;
+			}
+
+			.slider {
+       width: 80%;
+       height: 25px;
+       background-color: white;
+       outline: none;
+       opacity: 0.7;
+     }
+
+     .slider:hover {
+       opacity : 0.8;
+     }
+
+     .logo {
+     	display: flex;
+     	justify-content: center;
+     }
+
 </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+    </div>
     <script src="/bundle.js"></script>
   </body>
 </html>

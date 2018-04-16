@@ -13,7 +13,7 @@ class Market extends React.Component {
 	  		lat : 37.806434,
 	  		lng : -122.272686
 	  	},
-	  	url : `https://maps.googleapis.com/maps/api/js?key=AIzaSyAg-V7qRX9aHxVQsyY1dRcLVAvwYuutJsw&v=3.exp&libraries=geometry,drawing,places`,
+	  	url : `https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx1RwsvbMjv3NABMj9gs4qlPb4shZ1JY&v=3.exp&libraries=geometry,drawing,places`,
 
 	  	markers:[
 		  	{
@@ -47,9 +47,7 @@ class Market extends React.Component {
   				loadingElement={<div style={{ height: `100%` }} />}
   				containerElement={<div style={{ height: `800px` }} />}
   				mapElement={<div style={{ height: `100%` }} />}
-  				 markers={this.state.markers}
 				/>
-
 		</div>
 		);
 

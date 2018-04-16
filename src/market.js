@@ -17,16 +17,18 @@ class Market extends React.Component {
 
 	  	markers:[
 		  	{
+		  		src: "https://drive.google.com/uc?id=140dwJDLy-sWYVskh-F_H5bonFMYc6gia",
 	        position:{
-	          lat: 37.80643,
-	          lng:-122.27268
+	          lat: 37.7638004,
+	          lng: -122.4592096
 	        }
 	      },
 
 	      {
+	      	src: "https://drive.google.com/uc?id=140dwJDLy-sWYVskh-F_H5bonFMYc6gia",
 	        position:{
-	          lat: 37.80643,
-	          lng:-122.27268
+	          lat: 37.7638004,
+	          lng: -122.4592096
 	        }
       	}
       ]
@@ -47,6 +49,7 @@ class Market extends React.Component {
   				loadingElement={<div style={{ height: `100%` }} />}
   				containerElement={<div style={{ height: `800px` }} />}
   				mapElement={<div style={{ height: `100%` }} />}
+  				markers={this.state.markers}
 				/>
 		</div>
 		);

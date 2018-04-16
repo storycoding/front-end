@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer'
+import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 
 import {
   withScriptjs,
@@ -13,12 +13,11 @@ import {
 import {
   compose,
   withProps,
-  withStateHandlers
+  withStateHandlers,
+  withHandlers
 } from "recompose";
 
-import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox";
-
-import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
+import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox";;
 
 const mapStyles = [
   {
@@ -185,19 +184,6 @@ const mapStyles = [
     }]
   }
 ];
-/*
-const Map = withScriptjs(withGoogleMap(props =>
-  <GoogleMap
-    defaultZoom={14}
-    defaultCenter={{ lat: 37.7638004, lng: -122.4592096 }}
-    styles={mapStyles}
-  >
-    <Marker
-      position={{ lat: 37.7638004, lng: -122.4592096 }}
-    />
-  </GoogleMap>
-));
-*/
 
 const Map = compose(
   withProps({
@@ -214,6 +200,13 @@ const Map = compose(
       isOpen: !isOpen,
     })
   }),
+  withHandlers({
+    onMarkerClustererClick: () => (markerClusterer) => {
+      const clickedMarkers = markerClusterer.getMarkers()
+      console.log(`Current clicked markers length: ${clickedMarkers.length}`)
+      console.log(clickedMarkers)
+    },
+  }),
   withScriptjs,
   withGoogleMap
 )(props =>
@@ -222,30 +215,21 @@ const Map = compose(
     defaultCenter={{ lat: 37.7638004, lng: -122.4592096 }}
     defaultOptions={{ styles: mapStyles }}
   >
+    <MarkerClusterer
+      onClick={props.onMarkerClustererClick}
+      averageCenter
+      enableRetinaIcons
+      gridSize={60}
+    >
+      {props.markers.map((marker, index) => (
+        <Marker
+          key={index}
+          position={{ lat: marker.position.lat, lng: marker.position.lng }}
+          icon={marker.src}
+        />
+      ))}
+    </MarkerClusterer>
 
-    <DrawingManager
-      defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}
-      defaultOptions={{
-        drawingControl: true,
-        drawingControlOptions: {
-          position: google.maps.ControlPosition.TOP_CENTER,
-          drawingModes: [
-            google.maps.drawing.OverlayType.CIRCLE,
-            google.maps.drawing.OverlayType.POLYGON,
-            google.maps.drawing.OverlayType.POLYLINE,
-            google.maps.drawing.OverlayType.RECTANGLE,
-          ],
-        },
-        circleOptions: {
-          fillColor: `#ffff00`,
-          fillOpacity: 1,
-          strokeWeight: 5,
-          clickable: false,
-          editable: true,
-          zIndex: 1,
-        },
-      }}
-    />
 
   </GoogleMap>
 

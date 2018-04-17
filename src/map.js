@@ -26,9 +26,9 @@ const GOOGLE_MAPS_API_KEY = `https://maps.googleapis.com/maps/api/js?key=${proce
 const Map = compose(
   withProps({
     googleMapURL: GOOGLE_MAPS_API_KEY,
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `800px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    loadingElement: <div style={{ height: `95vh` }} />,
+    containerElement: <div style={{ height: `95vh` }} />,
+    mapElement: <div style={{ height: `95vh` }} />,
     center: { lat: 25.03, lng: 121.6 }
   }),
   withHandlers({

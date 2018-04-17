@@ -15,6 +15,7 @@
 				display: flex;
 				justify-content: center;
 				color: white;
+				font-size: 2vw;
 			}
 
 			#app {
@@ -23,19 +24,26 @@
 			}
 
 			.wrapper {
-				min-width: 700px;
+				min-width: 400px;
 				display: flex;
 				justify-content: center;
 				flex-direction: column;
 			}
 
+			.mapWrapper {
+				height: 95vh;
+      	position: relative;
+     }
+
 			.navBar {
-				font-size: 3vw;
+				height: 5vh;
+				font-size: 1.5rem;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
 				padding: 0 15px 0 15px;
+				background-color: black;
 			}
 
 			.navBar > div {
@@ -88,34 +96,35 @@
 			}
 
 			.transaction-username {
-				font-size: 2vw;
+				font-size: 1.5rem;
 				margin-left: 20px;
 			}
 
 			.transaction-amount {
-				font-size: 3vw;
+				font-size: 1.5rem;
 				text-align: right;
 			}
 
 			.transaction-watts {
-				font-size: 1.5vw;
+				font-size: 1rem;
 				text-align: right;
 			}
 
 			.transaction-time {
-				font-size: 1vw;
+				font-size: 0.5rem;
 				text-align: right;
 			}
 
 			.centered {
         text-align: center;
 				margin: auto;
-        margin-top: 10vw;
+        margin-top: 20px;
         width: 80%;
 				display: flex;
         flex-direction: column;
 				justify-content: center;
-				font-size: 2vw;
+				align-items: center;
+				font-size: 1rem;
 			}
 
 			.slider {
@@ -131,13 +140,12 @@
        	opacity : 0.8;
      }
 
-     .logo {
-     		display: flex;
-     		justify-content: center;
-     }
 
-     .mapWrapper {
-      	position: relative;
+     .logoWrapper {
+     		display: flex;
+     		align-items: center;
+     		justify-content: center;
+     		height: 95vh;
      }
 
      .dot {
@@ -152,6 +160,39 @@
        	justify-content: space-between;
        	flex-direction: row;
      }
+
+     .title {
+     	text-align: center;
+     	font-size: 2rem;
+     }
+
+     .portrait {
+     	margin: 20px;
+     	border-radius: 100%;
+     	border-width: 5px;
+     	border-style: solid;
+     	border-color: white;
+     }
+
+     .space-between {
+     	width: 80%;
+     	display: flex;
+     	justify-content: space-between;
+     	justify-content: row;
+     }
+
+     .medium {
+     	font-size: 1.5rem;
+     }
+
+     .highlighted {
+     	color: #F7E00D;
+     }
+
+     .logo {
+     	text-align: center;
+     }
+
 
 </style>
   </head>

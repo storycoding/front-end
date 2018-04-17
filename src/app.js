@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Market } from './market.js';
 import { Activity } from './activity.js';
 import { Profile } from './profile.js';
-
-console.log("Market = ", Market);
+import { Logo } from './logo.js';
 
 class App extends React.Component {
 
@@ -12,7 +10,7 @@ class App extends React.Component {
   super(props);
 
   	this.state = {
-	    page : "Activity",
+	    page : "Logo",
 	    url : `https://maps.googleapis.com/maps/api/js?key=AIzaSyAg-V7qRX9aHxVQsyY1dRcLVAvwYuutJsw=3.exp&libraries=geometry,drawing,places`
 		};
 
@@ -34,19 +32,22 @@ class App extends React.Component {
       <Activity/>
     ) : this.state.page === "Market" ? (
     	<Market/>
-    ) : (
-			<Profile/>
-		)
+    ) : this.state.page === "Logo" ? (
+
+    	<div className="logoWrapper" onClick={() =>  { 
+				console.log("click");
+				this.selectPage("Profile")}}>
+    	<Logo />
+    	</div>
+			
+		) : <Profile/>
 
 
 
 return (
 
 	<div className="wrapper">
-		<div className="logo">
-			<img src="https://drive.google.com/uc?id=1MLMROo0TJloTDWdJXPtJ3gb2BU0_Jec3" height="150px" width="150px"/>
-		</div>
-		
+
 		<div className="navBar">
 			<div onClick={() =>  { this.selectPage("Activity")} }>
 		  	Activity

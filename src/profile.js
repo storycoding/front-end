@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Profile extends React.Component {
 	constructor(props) {
@@ -9,23 +8,20 @@ class Profile extends React.Component {
 
 	render() {
 
-		console.log("profile loaded");
-
 		return (
 			<div className="centered">
-				<b>John Smith</b>
-				<p>Minimum selling price: $0.10</p>
-				<p>Maximum buying price: $0.15</p>
-				<p>Maximum distance: 3 miles</p>
-				<p></p>
-				<p>Green Energy Slider</p>
+				<img className="portrait" src="https://drive.google.com/uc?id=1O1JHkbb_IUCx2tmg2bDQsct6iQIb-VFV" height="250px" width="250px"/>
+				<b className="title" >Rowan Atkins</b>
+				<p className="transaction-watts" >Minimum selling price: $0.10</p>
+				<p className="transaction-watts" >Maximum buying price: $0.15</p>
 
-        <input type="range" min="1" max="255" className="slider" id="slider"/>
+        <input type="range" min="1" max="2" className="slider" id="slider"/>
 
-				<div className="sliderText">
-				<div>environmental</div>
-				<div>economical</div>
+				<div className="space-between">
+					<div className="medium">eco</div>
+					<div className="medium highlighted">$$$</div>
 				</div>
+				
       </div>
 		);
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Map } from './map.js';
 
 
@@ -10,25 +9,41 @@ class Market extends React.Component {
 	  this.state = {
 
 	  	location : {
-	  		lat : 37.806434,
-	  		lng : -122.272686
+	  		lat : 37.806,
+	  		lng : -122.272
 	  	},
-	  	url : `https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx1RwsvbMjv3NABMj9gs4qlPb4shZ1JY&v=3.exp&libraries=geometry,drawing,places`,
+	  	url : `https://drive.google.com/uc?id=1XgEB-8vpdpI393xskoyyKS62eQv0xgtP`,
 
 	  	markers:[
 		  	{
-		  		src: "https://drive.google.com/uc?id=140dwJDLy-sWYVskh-F_H5bonFMYc6gia",
 	        position:{
-	          lat: 37.7638004,
-	          lng: -122.4592096
+	          lat: 37.763,
+	          lng: -122.459
 	        }
 	      },
 
 	      {
-	      	src: "https://drive.google.com/uc?id=140dwJDLy-sWYVskh-F_H5bonFMYc6gia",
 	        position:{
-	          lat: 37.7638004,
-	          lng: -122.4592096
+	          lat: 37.768,
+	          lng: -122.46
+	        }
+      	},
+      	{
+	        position:{
+	          lat: 37.764,
+	          lng: -122.480
+	        }
+      	},
+      	{
+	        position:{
+	          lat: 37.782,
+	          lng: -122.460
+	        }
+      	},
+      	{
+	        position:{
+	          lat: 37.764,
+	          lng: -122.447
 	        }
       	}
       ]
@@ -46,9 +61,9 @@ class Market extends React.Component {
 					lat={this.state.lat}
 					lng={this.state.lng}
  					googleMapURL={this.state.url}
-  				loadingElement={<div style={{ height: `100%` }} />}
-  				containerElement={<div style={{ height: `800px` }} />}
-  				mapElement={<div style={{ height: `100%` }} />}
+  				loadingElement={<div style={{ height: `300px` }} />}
+  				containerElement={<div style={{ height: `300px` }} />}
+  				mapElement={<div style={{ height: `300px` }} />}
   				markers={this.state.markers}
 				/>
 		</div>

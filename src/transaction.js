@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Transaction extends React.Component {
 	constructor(props) {
@@ -9,17 +8,15 @@ class Transaction extends React.Component {
 
 	render() {
 
-		console.log("activity loaded");
-
 		return (
 			<div className="transaction-outer-box">
-
 
 					<div className="left">
 
 						<div className="transaction-username">
 							{this.props.user}
 						</div>
+
 					</div>
 
 					<div className="right">

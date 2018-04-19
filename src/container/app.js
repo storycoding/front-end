@@ -2,7 +2,7 @@ import React from 'react';
 import { Market } from './market.js';
 import { Activity } from './activity.js';
 import { Profile } from './profile.js';
-import { Logo } from './logo.js';
+import { Logo } from '../presentation/logo.js';
 
 class App extends React.Component {
 

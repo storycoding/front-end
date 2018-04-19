@@ -1,6 +1,5 @@
 import React from 'react';
-import { Map } from './map.js';
-
+import { Map } from '../presentation/map.js';
 
 class Market extends React.Component {
 	constructor(props) {
@@ -50,6 +49,35 @@ class Market extends React.Component {
 
 
 		}
+	}
+
+	componentDidMount() {
+
+
+		fetch('http://localhost:8000/vendors', { mode: 'cors' })
+	  .then((response) => {
+	    return response.json();
+	  }).then((data) => {
+
+	  	let vendors = [];
+
+	  	for (var i = 0; i < data.length; i++) {
+	  		
+	  		let vendor = {
+	  			lat: parseFloat(data[i].lat),
+	  			lng: parseFloat(data[i].lng),
+	  			name: data[i].username,
+	  			price: data[i].price
+	  		};
+
+	  		console.log("vendor = ", vendor);
+	  		vendors.push(vendor);
+	  	}
+
+	  	this.setState({markers : vendors});
+	    
+	  });
+
 	}
 
 	render() {

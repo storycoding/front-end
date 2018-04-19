@@ -55,7 +55,7 @@ const Map = compose(
       {props.markers.map((marker, index) => (
         <Marker
           key={index}
-          position={{ lat: marker.position.lat, lng: marker.position.lng }}
+          position={{ lat: marker.lat, lng: marker.lng }}
           icon={{
     url: 'https://drive.google.com/uc?id=1SHB1cqkPd2VlSfQQPXdTwuefl27m6jT0',
     scaledSize: new google.maps.Size(31, 43)

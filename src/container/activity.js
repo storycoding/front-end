@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Transaction } from './transaction.js';
+import { Transaction } from '../presentation/transaction.js';
 
 class Activity extends React.Component {
 	constructor(props) {

@@ -1,25 +1,23 @@
-const getLocation = function() {
-  console.log("getLocation initiated");
-  
+const getLocation = function(callback) {
+
+  let storedLocation = JSON.parse(sessionStorage.getItem('NG_myLocation'));
+
+  if(storedLocation) {
+    callback(storedLocation);
+    return;
+  }
+
   const success = (position) => {
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
     
-    sessionStorage.setItem('NG_myLocation', JSON.stringify([latitude,longitude]));
-    console.log(`lat: ${latitude} | lon: ${longitude}`);
+    sessionStorage.setItem('NG_myLocation', JSON.stringify({lat:latitude,lng: longitude}));
+    console.log(` success: { lat: ${latitude}, lon: ${longitude}}`);
+    callback({lat: latitude, lng: longitude});
   }
 
   const error = (err) => {
-    
-    if(err.message === "Timeout expired") {
-      frame.innerHTML ="Timed-out!";
-      output.innerHTML = "please try again";
-    } else {
-      frame.innerHTML ="Oops!";
-      output.innerHTML = "unable to retrieve your location";
-    }
-    
-    console.error(err);
+    callback(err);
   }
 
   const options = {
@@ -28,9 +26,8 @@ const getLocation = function() {
     maximumAge: 0
   };
   
-  console.log("starting navigator.geolocation.getCurrentPosition()")
-  navigator.geolocation.getCurrentPosition(success, error, options)
-    .then(console.log("navigator returned: " + sessionStorage.getItem('NG_myLocation')));
+  navigator.geolocation.getCurrentPosition(success, error, options);
+    // should return location: { lat: lat, lng: lng}
 }
 
 module.exports = { getLocation : getLocation };

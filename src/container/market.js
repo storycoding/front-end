@@ -8,44 +8,12 @@ class Market extends React.Component {
 	  this.state = {
 
 	  	location : {
-	  		lat : 37.806,
-	  		lng : -122.272
+	  		lat : this.props.lat,
+	  		lng : this.props.lng
 	  	},
 	  	url : `https://drive.google.com/uc?id=1XgEB-8vpdpI393xskoyyKS62eQv0xgtP`,
 
-	  	markers:[
-		  	{
-	        position:{
-	          lat: 37.763,
-	          lng: -122.459
-	        }
-	      },
-
-	      {
-	        position:{
-	          lat: 37.768,
-	          lng: -122.46
-	        }
-      	},
-      	{
-	        position:{
-	          lat: 37.764,
-	          lng: -122.480
-	        }
-      	},
-      	{
-	        position:{
-	          lat: 37.782,
-	          lng: -122.460
-	        }
-      	},
-      	{
-	        position:{
-	          lat: 37.764,
-	          lng: -122.447
-	        }
-      	}
-      ]
+	  	markers:[]
 
 
 		}
@@ -70,7 +38,7 @@ class Market extends React.Component {
 	  			price: data[i].price
 	  		};
 
-	  		console.log("vendor = ", vendor);
+	  		//console.log("vendor = ", vendor);
 	  		vendors.push(vendor);
 	  	}
 
@@ -81,13 +49,11 @@ class Market extends React.Component {
 	}
 
 	render() {
-		console.log("market loaded");
-		console.log("this.state.url = " + this.state.url );
 		return (
 			<div className="mapWrapper">
 				<Map
-					lat={this.state.lat}
-					lng={this.state.lng}
+					lat={this.state.location.lat}
+					lng={this.state.location.lng}
  					googleMapURL={this.state.url}
   				loadingElement={<div style={{ height: `300px` }} />}
   				containerElement={<div style={{ height: `300px` }} />}

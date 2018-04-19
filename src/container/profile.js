@@ -14,6 +14,14 @@ class Profile extends React.Component {
 	  this.slide = function(val) {
   		this.setState({price: val});
   	}
+
+  	this.addVendor = function() {
+  		// use the user location as the source of the vendor
+  		// use the name as the username
+  		// user the price as the price
+  		// make post request to the database
+  		// add user to the grid as a vendor
+  	}
 	}
 
 	render() {
@@ -30,6 +38,10 @@ class Profile extends React.Component {
 				<div className="space-between">
 					<div className="medium">eco</div>
 					<div className="medium">$$$</div>
+				</div>
+
+				<div id="addVendor">
+				join the grid
 				</div>
 				
       </div>

@@ -28,8 +28,7 @@ const Map = compose(
     googleMapURL: GOOGLE_MAPS_API_KEY,
     loadingElement: <div style={{ height: `95vh` }} />,
     containerElement: <div style={{ height: `95vh` }} />,
-    mapElement: <div style={{ height: `95vh` }} />,
-    center: { lat: 25.03, lng: 121.6 }
+    mapElement: <div style={{ height: `95vh` }} />
   }),
   withHandlers({
     onMarkerClustererClick: () => (markerClusterer) => {
@@ -43,7 +42,7 @@ const Map = compose(
 )(props =>
   <GoogleMap
     defaultZoom={12}
-    defaultCenter={{ lat: 37.763, lng: -122.459 }}
+    defaultCenter={{ lat: props.lat, lng: props.lng }}
     defaultOptions={{ styles: mapStyles, disableDefaultUI: true}}
   >
     <MarkerClusterer
@@ -66,8 +65,6 @@ const Map = compose(
 
 
   </GoogleMap>
-
-
 );
 
 module.exports = { Map: Map };

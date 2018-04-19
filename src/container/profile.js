@@ -16,6 +16,16 @@ class Profile extends React.Component {
   	}
 
   	this.addVendor = function() {
+  		let storedLocation = JSON.parse(sessionStorage.getItem('PB_Location'));
+
+  		postData('http://localhost:8000/vendors', {
+  			username: this.state.user,
+  			lat: storedLocation.lat,
+  			lng: storedLocation.lng,
+  			price: this.state.price
+  		})
+  		.then(data => console.log(data)) // JSON from `response.json()` call
+  		.catch(error => console.error(error))
   		// use the user location as the source of the vendor
   		// use the name as the username
   		// user the price as the price
